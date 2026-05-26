@@ -1,0 +1,318 @@
+{
+  "version": "2026-world-cup-bracket-v1",
+  "lastUpdated": "2026-07-19T23:59:00Z",
+  "scoringRules": {
+    "roundOf32": 1,
+    "roundOf16": 2,
+    "quarterfinal": 3,
+    "semifinal": 4,
+    "thirdPlace": 4,
+    "final": 8,
+    "championBonus": 16
+  },
+  "scoringMode": "slot-based",
+  "stageCompletedThrough": "final",
+  "maxPossiblePointsSoFar": 140,
+  "standings": [
+    {
+      "rank": 1,
+      "playerId": "sample_player_3",
+      "displayName": "Sample Player 3",
+      "totalPoints": 129,
+      "pointsBreakdown": {
+        "roundOf32": 30,
+        "roundOf16": 30,
+        "quarterfinal": 21,
+        "semifinal": 12,
+        "thirdPlace": 4,
+        "final": 16,
+        "championBonus": 16
+      },
+      "correctCounts": {
+        "roundOf32Slots": 30,
+        "roundOf16Slots": 15,
+        "quarterfinalSlots": 7,
+        "semifinalSlots": 3,
+        "thirdPlaceWinner": 1,
+        "finalistSlots": 2,
+        "champion": 1
+      },
+      "remainingPotential": {
+        "championStillAlive": true,
+        "championPick": "FRA",
+        "runnerUpPick": "POR",
+        "thirdPlacePick": "ESP"
+      }
+    },
+    {
+      "rank": 2,
+      "playerId": "sample_player_8",
+      "displayName": "Sample Player 8",
+      "totalPoints": 118,
+      "pointsBreakdown": {
+        "roundOf32": 29,
+        "roundOf16": 28,
+        "quarterfinal": 21,
+        "semifinal": 8,
+        "thirdPlace": 0,
+        "final": 16,
+        "championBonus": 16
+      },
+      "correctCounts": {
+        "roundOf32Slots": 29,
+        "roundOf16Slots": 14,
+        "quarterfinalSlots": 7,
+        "semifinalSlots": 2,
+        "thirdPlaceWinner": 0,
+        "finalistSlots": 2,
+        "champion": 1
+      },
+      "remainingPotential": {
+        "championStillAlive": true,
+        "championPick": "FRA",
+        "runnerUpPick": "POR",
+        "thirdPlacePick": "BRA"
+      }
+    },
+    {
+      "rank": 3,
+      "playerId": "sample_player_1",
+      "displayName": "Sample Player 1",
+      "totalPoints": 116,
+      "pointsBreakdown": {
+        "roundOf32": 21,
+        "roundOf16": 22,
+        "quarterfinal": 21,
+        "semifinal": 16,
+        "thirdPlace": 4,
+        "final": 16,
+        "championBonus": 16
+      },
+      "correctCounts": {
+        "roundOf32Slots": 21,
+        "roundOf16Slots": 11,
+        "quarterfinalSlots": 7,
+        "semifinalSlots": 4,
+        "thirdPlaceWinner": 1,
+        "finalistSlots": 2,
+        "champion": 1
+      },
+      "remainingPotential": {
+        "championStillAlive": true,
+        "championPick": "FRA",
+        "runnerUpPick": "POR",
+        "thirdPlacePick": "ESP"
+      }
+    },
+    {
+      "rank": 4,
+      "playerId": "sample_player_10",
+      "displayName": "Sample Player 10",
+      "totalPoints": 112,
+      "pointsBreakdown": {
+        "roundOf32": 28,
+        "roundOf16": 26,
+        "quarterfinal": 18,
+        "semifinal": 12,
+        "thirdPlace": 4,
+        "final": 8,
+        "championBonus": 16
+      },
+      "correctCounts": {
+        "roundOf32Slots": 28,
+        "roundOf16Slots": 13,
+        "quarterfinalSlots": 6,
+        "semifinalSlots": 3,
+        "thirdPlaceWinner": 1,
+        "finalistSlots": 1,
+        "champion": 1
+      },
+      "remainingPotential": {
+        "championStillAlive": true,
+        "championPick": "FRA",
+        "runnerUpPick": "ARG",
+        "thirdPlacePick": "ESP"
+      }
+    },
+    {
+      "rank": 5,
+      "playerId": "sample_player_7",
+      "displayName": "Sample Player 7",
+      "totalPoints": 101,
+      "pointsBreakdown": {
+        "roundOf32": 27,
+        "roundOf16": 24,
+        "quarterfinal": 18,
+        "semifinal": 8,
+        "thirdPlace": 0,
+        "final": 8,
+        "championBonus": 16
+      },
+      "correctCounts": {
+        "roundOf32Slots": 27,
+        "roundOf16Slots": 12,
+        "quarterfinalSlots": 6,
+        "semifinalSlots": 2,
+        "thirdPlaceWinner": 0,
+        "finalistSlots": 1,
+        "champion": 1
+      },
+      "remainingPotential": {
+        "championStillAlive": true,
+        "championPick": "FRA",
+        "runnerUpPick": "ARG",
+        "thirdPlacePick": "BRA"
+      }
+    },
+    {
+      "rank": 6,
+      "playerId": "sample_player_4",
+      "displayName": "Sample Player 4",
+      "totalPoints": 99,
+      "pointsBreakdown": {
+        "roundOf32": 28,
+        "roundOf16": 24,
+        "quarterfinal": 15,
+        "semifinal": 8,
+        "thirdPlace": 0,
+        "final": 8,
+        "championBonus": 16
+      },
+      "correctCounts": {
+        "roundOf32Slots": 28,
+        "roundOf16Slots": 12,
+        "quarterfinalSlots": 5,
+        "semifinalSlots": 2,
+        "thirdPlaceWinner": 0,
+        "finalistSlots": 1,
+        "champion": 1
+      },
+      "remainingPotential": {
+        "championStillAlive": true,
+        "championPick": "FRA",
+        "runnerUpPick": "BRA",
+        "thirdPlacePick": "ARG"
+      }
+    },
+    {
+      "rank": 7,
+      "playerId": "sample_player_6",
+      "displayName": "Sample Player 6",
+      "totalPoints": 96,
+      "pointsBreakdown": {
+        "roundOf32": 28,
+        "roundOf16": 26,
+        "quarterfinal": 18,
+        "semifinal": 8,
+        "thirdPlace": 0,
+        "final": 16,
+        "championBonus": 0
+      },
+      "correctCounts": {
+        "roundOf32Slots": 28,
+        "roundOf16Slots": 13,
+        "quarterfinalSlots": 6,
+        "semifinalSlots": 2,
+        "thirdPlaceWinner": 0,
+        "finalistSlots": 2,
+        "champion": 0
+      },
+      "remainingPotential": {
+        "championStillAlive": false,
+        "championPick": "POR",
+        "runnerUpPick": "FRA",
+        "thirdPlacePick": "ESP"
+      }
+    },
+    {
+      "rank": 8,
+      "playerId": "sample_player_9",
+      "displayName": "Sample Player 9",
+      "totalPoints": 78,
+      "pointsBreakdown": {
+        "roundOf32": 25,
+        "roundOf16": 22,
+        "quarterfinal": 15,
+        "semifinal": 8,
+        "thirdPlace": 0,
+        "final": 8,
+        "championBonus": 0
+      },
+      "correctCounts": {
+        "roundOf32Slots": 25,
+        "roundOf16Slots": 11,
+        "quarterfinalSlots": 5,
+        "semifinalSlots": 2,
+        "thirdPlaceWinner": 0,
+        "finalistSlots": 1,
+        "champion": 0
+      },
+      "remainingPotential": {
+        "championStillAlive": false,
+        "championPick": "ARG",
+        "runnerUpPick": "POR",
+        "thirdPlacePick": "ESP"
+      }
+    },
+    {
+      "rank": 9,
+      "playerId": "sample_player_5",
+      "displayName": "Sample Player 5",
+      "totalPoints": 73,
+      "pointsBreakdown": {
+        "roundOf32": 24,
+        "roundOf16": 22,
+        "quarterfinal": 15,
+        "semifinal": 8,
+        "thirdPlace": 4,
+        "final": 0,
+        "championBonus": 0
+      },
+      "correctCounts": {
+        "roundOf32Slots": 24,
+        "roundOf16Slots": 11,
+        "quarterfinalSlots": 5,
+        "semifinalSlots": 2,
+        "thirdPlaceWinner": 1,
+        "finalistSlots": 0,
+        "champion": 0
+      },
+      "remainingPotential": {
+        "championStillAlive": false,
+        "championPick": "BRA",
+        "runnerUpPick": "ESP",
+        "thirdPlacePick": "ESP"
+      }
+    },
+    {
+      "rank": 10,
+      "playerId": "sample_player_2",
+      "displayName": "Sample Player 2",
+      "totalPoints": 58,
+      "pointsBreakdown": {
+        "roundOf32": 22,
+        "roundOf16": 16,
+        "quarterfinal": 12,
+        "semifinal": 4,
+        "thirdPlace": 4,
+        "final": 0,
+        "championBonus": 0
+      },
+      "correctCounts": {
+        "roundOf32Slots": 22,
+        "roundOf16Slots": 8,
+        "quarterfinalSlots": 4,
+        "semifinalSlots": 1,
+        "thirdPlaceWinner": 1,
+        "finalistSlots": 0,
+        "champion": 0
+      },
+      "remainingPotential": {
+        "championStillAlive": false,
+        "championPick": "ARG",
+        "runnerUpPick": "FRA",
+        "thirdPlacePick": "ESP"
+      }
+    }
+  ]
+}
