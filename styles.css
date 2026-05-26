@@ -1,0 +1,240 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #172033;
+  --muted: #667085;
+  --border: #d9e0ec;
+  --accent: #1f5eff;
+  --accent-soft: #eaf0ff;
+  --gold: #f5b700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.site-header {
+  background: linear-gradient(135deg, #172033, #1f5eff);
+  color: white;
+  padding: 32px 20px;
+}
+
+.site-header h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+.site-header p {
+  margin: 0;
+  color: #dce6ff;
+}
+
+.container {
+  width: min(1200px, calc(100% - 32px));
+  margin: 24px auto;
+}
+
+.summary-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(23, 32, 51, 0.08);
+}
+
+.label {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.summary-card strong {
+  font-size: 20px;
+}
+
+.scoring-section,
+.standings-section,
+.details-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(23, 32, 51, 0.08);
+}
+
+.scoring-note {
+  margin: 0 0 16px;
+  color: var(--muted);
+}
+
+.scoring-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.scoring-item {
+  background: #fbfcff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.scoring-item span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.scoring-item strong {
+  font-size: 22px;
+  color: var(--accent);
+}
+
+.champion-bonus {
+  background: #fff8dc;
+}
+
+h2 {
+  margin: 0 0 16px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+th,
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  background: var(--accent-soft);
+  color: var(--text);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+tbody tr:first-child td:first-child {
+  font-weight: bold;
+}
+
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.rank-badge.first {
+  background: #fff4c2;
+  color: #8a6400;
+}
+
+.total-points {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.player-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  background: #fbfcff;
+}
+
+.player-card h3 {
+  margin: 0 0 8px;
+}
+
+.player-card .points {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid #edf1f7;
+}
+
+.card-row:last-child {
+  border-bottom: 0;
+}
+
+.card-row span:first-child {
+  color: var(--muted);
+}
+
+.alive {
+  color: #11823b;
+  font-weight: bold;
+}
+
+.eliminated {
+  color: #b42318;
+  font-weight: bold;
+}
+
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 24px;
+}
+
+.error {
+  background: #fff1f0;
+  border: 1px solid #ffccc7;
+  color: #a8071a;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+@media (max-width: 700px) {
+  .site-header h1 {
+    font-size: 26px;
+  }
+
+  .summary-card {
+    grid-template-columns: 1fr;
+  }
+}

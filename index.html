@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Cup Bracket Standings</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <h1>World Cup Bracket Standings</h1>
+      <p id="lastUpdated">Loading standings...</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="summary-card">
+      <div>
+        <span class="label">Scoring Mode</span>
+        <strong id="scoringMode">-</strong>
+      </div>
+      <div>
+        <span class="label">Completed Through</span>
+        <strong id="completedThrough">-</strong>
+      </div>
+      <div>
+        <span class="label">Max Points So Far</span>
+        <strong id="maxPoints">-</strong>
+      </div>
+    </section>
+
+    <section class="scoring-section">
+      <h2>Scoring Legend</h2>
+      <p class="scoring-note">
+        Scoring is slot-based. Players earn points for placing the correct teams into each round of the bracket.
+      </p>
+
+      <div class="scoring-grid">
+        <div class="scoring-item">
+          <span>Round of 32 Slot</span>
+          <strong id="scoreRoundOf32">-</strong>
+        </div>
+        <div class="scoring-item">
+          <span>Round of 16 Slot</span>
+          <strong id="scoreRoundOf16">-</strong>
+        </div>
+        <div class="scoring-item">
+          <span>Quarterfinal Slot</span>
+          <strong id="scoreQuarterfinal">-</strong>
+        </div>
+        <div class="scoring-item">
+          <span>Semifinal Slot</span>
+          <strong id="scoreSemifinal">-</strong>
+        </div>
+        <div class="scoring-item">
+          <span>Third Place Winner</span>
+          <strong id="scoreThirdPlace">-</strong>
+        </div>
+        <div class="scoring-item">
+          <span>Finalist Slot</span>
+          <strong id="scoreFinal">-</strong>
+        </div>
+        <div class="scoring-item champion-bonus">
+          <span>Champion Bonus</span>
+          <strong id="scoreChampionBonus">-</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="standings-section">
+      <h2>Leaderboard</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Player</th>
+              <th>Total</th>
+              <th>R32</th>
+              <th>R16</th>
+              <th>QF</th>
+              <th>SF</th>
+              <th>3rd</th>
+              <th>Final</th>
+              <th>Bonus</th>
+              <th>Champion Pick</th>
+            </tr>
+          </thead>
+          <tbody id="standingsBody">
+            <tr>
+              <td colspan="11">Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="details-section">
+      <h2>Player Details</h2>
+      <div id="playerCards" class="player-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>World Cup Bracket Pool</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
