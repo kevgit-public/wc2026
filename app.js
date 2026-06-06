@@ -1,21 +1,49 @@
 const STANDINGS_URL = "data/standings.json";
+const PLAYERS_URL = "data/players.json";
+
+let playersById = {};
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadStandings();
+  loadData();
+
+  document.getElementById("modalClose").addEventListener("click", closeModal);
+  document.getElementById("modalBackdrop").addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  });
 });
 
-async function loadStandings() {
+async function loadData() {
   try {
-    const response = await fetch(STANDINGS_URL, { cache: "no-store" });
+    const [standingsResponse, playersResponse] = await Promise.all([
+      fetch(STANDINGS_URL, { cache: "no-store" }),
+      fetch(PLAYERS_URL, { cache: "no-store" })
+    ]);
 
-    if (!response.ok) {
+    if (!standingsResponse.ok) {
       throw new Error(
-        `Could not load ${STANDINGS_URL}. Status: ${response.status} ${response.statusText}`
+        `Could not load ${STANDINGS_URL}. Status: ${standingsResponse.status} ${standingsResponse.statusText}`
       );
     }
 
-    const data = await response.json();
-    renderStandings(data);
+    if (!playersResponse.ok) {
+      throw new Error(
+        `Could not load ${PLAYERS_URL}. Status: ${playersResponse.status} ${playersResponse.statusText}`
+      );
+    }
+
+    const standingsData = await standingsResponse.json();
+    const playersData = await playersResponse.json();
+
+    playersById = {};
+    (playersData.players || []).forEach((player) => {
+      playersById[player.id] = player;
+    });
+
+    renderStandings(standingsData);
   } catch (error) {
     renderError(error);
   }
@@ -87,7 +115,7 @@ function renderLeaderboard(standings) {
           ${safeValue(player.rank)}
         </span>
       </td>
-      <td>${safeValue(player.displayName)}</td>
+      <td>${renderPlayerButton(player.playerId, player.displayName)}</td>
       <td class="total-points">${safeValue(player.totalPoints)}</td>
       <td>${safeValue(breakdown.roundOf32)}</td>
       <td>${safeValue(breakdown.roundOf16)}</td>
@@ -101,6 +129,8 @@ function renderLeaderboard(standings) {
 
     tbody.appendChild(row);
   });
+
+  attachPlayerClickHandlers();
 }
 
 function renderPlayerCards(standings, tournamentComplete) {
@@ -131,7 +161,7 @@ function renderPlayerCards(standings, tournamentComplete) {
     card.className = "player-card";
 
     card.innerHTML = `
-      <h3>#${safeValue(player.rank)} ${safeValue(player.displayName)}</h3>
+      <h3>#${safeValue(player.rank)} ${renderPlayerButton(player.playerId, player.displayName)}</h3>
       <div class="points">${safeValue(player.totalPoints)} pts</div>
 
       <div class="card-row">
@@ -177,6 +207,174 @@ function renderPlayerCards(standings, tournamentComplete) {
 
     container.appendChild(card);
   });
+
+  attachPlayerClickHandlers();
+}
+
+function renderPlayerButton(playerId, displayName) {
+  if (!playersById[playerId]) {
+    return safeValue(displayName);
+  }
+
+  return `
+    <button class="player-link" type="button" data-player-id="${escapeHtml(playerId)}">
+      ${escapeHtml(displayName)}
+    </button>
+  `;
+}
+
+function attachPlayerClickHandlers() {
+  document.querySelectorAll(".player-link").forEach((button) => {
+    button.addEventListener("click", () => {
+      const playerId = button.getAttribute("data-player-id");
+      openPlayerBracket(playerId);
+    });
+  });
+}
+
+function openPlayerBracket(playerId) {
+  const player = playersById[playerId];
+
+  if (!player) {
+    return;
+  }
+
+  const summary = player.reviewSummary || {};
+  const modalContent = document.getElementById("modalContent");
+
+  modalContent.innerHTML = `
+    <div class="bracket-view">
+      <h2>${escapeHtml(player.displayName)}'s Bracket</h2>
+      <p class="scoring-note">Filled-out bracket summary from this player's picks.</p>
+
+      <div class="bracket-summary">
+        <div class="bracket-summary-item">
+          <span>Champion</span>
+          <strong>${safeValue(summary.champion)}</strong>
+        </div>
+        <div class="bracket-summary-item">
+          <span>Runner-up</span>
+          <strong>${safeValue(summary.runnerUp)}</strong>
+        </div>
+        <div class="bracket-summary-item">
+          <span>Third Place</span>
+          <strong>${safeValue(summary.thirdPlaceWinner)}</strong>
+        </div>
+        <div class="bracket-summary-item">
+          <span>Fourth Place</span>
+          <strong>${safeValue(summary.fourthPlace)}</strong>
+        </div>
+      </div>
+
+      ${renderFinalSection(summary)}
+      ${renderRoundSection("Third Place Game", summary.thirdPlaceGame)}
+      ${renderMatchListSection("Semifinals", summary.semifinals)}
+      ${renderMatchListSection("Quarterfinals", summary.quarterfinals)}
+      ${renderMatchListSection("Round of 16", summary.roundOf16)}
+      ${renderMatchListSection("Round of 32", summary.roundOf32)}
+      ${renderOcrNotes(player.ocrNotes || [])}
+    </div>
+  `;
+
+  document.getElementById("bracketModal").classList.remove("hidden");
+}
+
+function renderFinalSection(summary) {
+  const final = summary.final || {};
+
+  return `
+    <section class="bracket-round">
+      <h3>Final</h3>
+      <div class="bracket-match-grid">
+        <div class="bracket-match">
+          <div class="bracket-match-id">Match 104</div>
+          <div class="bracket-match-result">
+            ${safeValue(final.winner)} over ${safeValue(getFinalOpponent(final.match, final.winner))}
+          </div>
+          <div>${safeValue(final.match)}</div>
+          <div>Score: ${safeValue(final.score)}</div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderRoundSection(title, matchObject) {
+  if (!matchObject) {
+    return "";
+  }
+
+  return `
+    <section class="bracket-round">
+      <h3>${escapeHtml(title)}</h3>
+      <div class="bracket-match-grid">
+        <div class="bracket-match">
+          <div class="bracket-match-result">
+            ${safeValue(matchObject.winner)} over ${safeValue(getFinalOpponent(matchObject.match, matchObject.winner))}
+          </div>
+          <div>${safeValue(matchObject.match)}</div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderMatchListSection(title, matches) {
+  if (!matches) {
+    return "";
+  }
+
+  const cards = Object.entries(matches)
+    .map(([matchId, result]) => {
+      return `
+        <div class="bracket-match">
+          <div class="bracket-match-id">Match ${escapeHtml(matchId)}</div>
+          <div class="bracket-match-result">${escapeHtml(result)}</div>
+        </div>
+      `;
+    })
+    .join("");
+
+  return `
+    <section class="bracket-round">
+      <h3>${escapeHtml(title)}</h3>
+      <div class="bracket-match-grid">
+        ${cards}
+      </div>
+    </section>
+  `;
+}
+
+function renderOcrNotes(notes) {
+  if (!notes.length) {
+    return "";
+  }
+
+  const listItems = notes
+    .map((note) => `<li>${escapeHtml(note)}</li>`)
+    .join("");
+
+  return `
+    <section class="ocr-notes">
+      <h3>OCR Notes</h3>
+      <ul>${listItems}</ul>
+    </section>
+  `;
+}
+
+function closeModal() {
+  document.getElementById("bracketModal").classList.add("hidden");
+}
+
+function getFinalOpponent(matchText, winner) {
+  if (!matchText || !winner || !matchText.includes(" vs ")) {
+    return "-";
+  }
+
+  const teams = matchText.split(" vs ").map((team) => team.trim());
+  const opponent = teams.find((team) => team !== winner);
+
+  return opponent || "-";
 }
 
 function renderError(error) {
@@ -187,7 +385,7 @@ function renderError(error) {
     <div class="error">
       <strong>Could not load standings.</strong>
       <p>${error.message}</p>
-      <p>Make sure <code>data/standings.json</code> exists and is valid JSON.</p>
+      <p>Make sure <code>data/standings.json</code> and <code>data/players.json</code> exist and are valid JSON.</p>
     </div>
   `;
 }
@@ -210,6 +408,7 @@ function formatDate(value) {
 function formatStageLabel(value) {
   const labels = {
     "slot-based": "Slot Based",
+    "notStarted": "Not Started",
     "roundOf32": "Round of 32",
     "roundOf16": "Round of 16",
     "quarterfinal": "Quarterfinals",
@@ -226,5 +425,14 @@ function safeValue(value) {
     return "-";
   }
 
-  return String(value);
+  return escapeHtml(String(value));
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
