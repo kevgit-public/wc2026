@@ -1,0 +1,349 @@
+{
+  "version": "2026-world-cup-bracket-v1",
+  "players": [
+    {
+      "id": "sample_player_1",
+      "displayName": "Sample Player 1",
+      "sourceFile": "DE41C52C-7AD3-4816-A505-E4E0A84343E4.jpeg",
+      "roundOf32Teams": {
+        "73": [
+          "CZE",
+          "CAN"
+        ],
+        "74": [
+          "GER",
+          "USA"
+        ],
+        "75": [
+          "JPN",
+          "MAR"
+        ],
+        "76": [
+          "BRA",
+          "NED"
+        ],
+        "77": [
+          "FRA",
+          "SCO"
+        ],
+        "78": [
+          "CIV",
+          "NOR"
+        ],
+        "79": [
+          "KOR",
+          "SCO"
+        ],
+        "80": [
+          "CRO",
+          "ECU"
+        ],
+        "81": [
+          "PAR",
+          "SEN"
+        ],
+        "82": [
+          "BEL",
+          "MEX"
+        ],
+        "83": [
+          "COL",
+          "ENG"
+        ],
+        "84": [
+          "ESP",
+          "AUT"
+        ],
+        "85": [
+          "CUI",
+          "ALG"
+        ],
+        "86": [
+          "ARG",
+          "URU"
+        ],
+        "87": [
+          "POR",
+          "QAT"
+        ],
+        "88": [
+          "TUR",
+          "EGY"
+        ]
+      },
+      "winners": {
+        "73": "CZE",
+        "74": "GER",
+        "75": "JPN",
+        "76": "BRA",
+        "77": "FRA",
+        "78": "NOR",
+        "79": "KOR",
+        "80": "CRO",
+        "81": "PAR",
+        "82": "BEL",
+        "83": "ENG",
+        "84": "ESP",
+        "85": "ALG",
+        "86": "ARG",
+        "87": "POR",
+        "88": "TUR",
+        "89": "FRA",
+        "90": "JPN",
+        "91": "BRA",
+        "92": "CRO",
+        "93": "ESP",
+        "94": "PAR",
+        "95": "ARG",
+        "96": "POR",
+        "97": "FRA",
+        "98": "ESP",
+        "99": "BRA",
+        "100": "POR",
+        "101": "FRA",
+        "102": "POR",
+        "103": "ESP",
+        "104": "FRA"
+      },
+      "tiebreaker": {
+        "finalScore": {
+          "FRA": 2,
+          "POR": 1
+        },
+        "totalGoalsFinal": 3
+      },
+      "reviewSummary": {
+        "champion": "FRA",
+        "runnerUp": "POR",
+        "thirdPlaceWinner": "ESP",
+        "fourthPlace": "BRA",
+        "final": {
+          "match": "FRA vs POR",
+          "winner": "FRA",
+          "score": "2-1"
+        },
+        "thirdPlaceGame": {
+          "match": "ESP vs BRA",
+          "winner": "ESP"
+        },
+        "semifinals": {
+          "101": "FRA over ESP",
+          "102": "POR over BRA"
+        },
+        "quarterfinals": {
+          "97": "FRA over JPN",
+          "98": "ESP over PAR",
+          "99": "BRA over CRO",
+          "100": "POR over ARG"
+        },
+        "roundOf16": {
+          "89": "FRA over GER",
+          "90": "JPN over CZE",
+          "91": "BRA over NOR",
+          "92": "CRO over KOR",
+          "93": "ESP over ENG",
+          "94": "PAR over BEL",
+          "95": "ARG over TUR",
+          "96": "POR over ALG"
+        },
+        "roundOf32": {
+          "73": "CZE over CAN",
+          "74": "GER over USA",
+          "75": "JPN over MAR",
+          "76": "BRA over NED",
+          "77": "FRA over SCO",
+          "78": "NOR over CIV",
+          "79": "KOR over SCO",
+          "80": "CRO over ECU",
+          "81": "PAR over SEN",
+          "82": "BEL over MEX",
+          "83": "ENG over COL",
+          "84": "ESP over AUT",
+          "85": "ALG over CUI",
+          "86": "ARG over URU",
+          "87": "POR over QAT",
+          "88": "TUR over EGY"
+        }
+      },
+      "ocrNotes": [
+        "Match 85 team 1 is unclear in the handwriting and was read as CUI. This should be manually confirmed.",
+        "Match 87 opponent was normalized to QAT.",
+        "Final score was read as FRA 2-1 POR.",
+        "Match 73 was corrected to CZE vs CAN based on user review."
+      ]
+    },
+    {
+      "id": "shorty",
+      "displayName": "Shorty",
+      "sourceFile": "08AB91BD-5425-49AB-ACEB-8064FCFA9973.jpeg",
+      "roundOf32Teams": {
+        "73": [
+          "MEX",
+          "CAN"
+        ],
+        "74": [
+          "GER",
+          "CZE"
+        ],
+        "75": [
+          "JPN",
+          "MAR"
+        ],
+        "76": [
+          "BRA",
+          "NED"
+        ],
+        "77": [
+          "FRA",
+          "SCO"
+        ],
+        "78": [
+          "ECU",
+          "NOR"
+        ],
+        "79": [
+          "KOR",
+          "ALG"
+        ],
+        "80": [
+          "SWE",
+          "KSA"
+        ],
+        "81": [
+          "TUR",
+          "QAT"
+        ],
+        "82": [
+          "BEL",
+          "CIV"
+        ],
+        "83": [
+          "COL",
+          "CRO"
+        ],
+        "84": [
+          "ESP",
+          "AUT"
+        ],
+        "85": [
+          "SUI",
+          "IRN"
+        ],
+        "86": [
+          "ARG",
+          "URU"
+        ],
+        "87": [
+          "POR",
+          "PAR"
+        ],
+        "88": [
+          "USA",
+          "EGY"
+        ]
+      },
+      "winners": {
+        "73": "CAN",
+        "74": "GER",
+        "75": "JPN",
+        "76": "BRA",
+        "77": "FRA",
+        "78": "NOR",
+        "79": "KOR",
+        "80": "SWE",
+        "81": "TUR",
+        "82": "BEL",
+        "83": "COL",
+        "84": "ESP",
+        "85": "SUI",
+        "86": "ARG",
+        "87": "POR",
+        "88": "USA",
+        "89": "FRA",
+        "90": "JPN",
+        "91": "BRA",
+        "92": "KOR",
+        "93": "ESP",
+        "94": "TUR",
+        "95": "ARG",
+        "96": "POR",
+        "97": "JPN",
+        "98": "ESP",
+        "99": "KOR",
+        "100": "ARG",
+        "101": "ESP",
+        "102": "ARG",
+        "103": "JPN",
+        "104": "ESP"
+      },
+      "tiebreaker": {
+        "finalScore": {
+          "ESP": 3,
+          "ARG": 2
+        },
+        "totalGoalsFinal": 5
+      },
+      "reviewSummary": {
+        "champion": "ESP",
+        "runnerUp": "ARG",
+        "thirdPlaceWinner": "JPN",
+        "fourthPlace": "KOR",
+        "final": {
+          "match": "ESP vs ARG",
+          "winner": "ESP",
+          "score": "3-2"
+        },
+        "thirdPlaceGame": {
+          "match": "JPN vs KOR",
+          "winner": "JPN"
+        },
+        "semifinals": {
+          "101": "ESP over JPN",
+          "102": "ARG over KOR"
+        },
+        "quarterfinals": {
+          "97": "JPN over FRA",
+          "98": "ESP over TUR",
+          "99": "KOR over BRA",
+          "100": "ARG over POR"
+        },
+        "roundOf16": {
+          "89": "FRA over GER",
+          "90": "JPN over CAN",
+          "91": "BRA over NOR",
+          "92": "KOR over SWE",
+          "93": "ESP over COL",
+          "94": "TUR over BEL",
+          "95": "ARG over USA",
+          "96": "POR over SUI"
+        },
+        "roundOf32": {
+          "73": "CAN over MEX",
+          "74": "GER over CZE",
+          "75": "JPN over MAR",
+          "76": "BRA over NED",
+          "77": "FRA over SCO",
+          "78": "NOR over ECU",
+          "79": "KOR over ALG",
+          "80": "SWE over KSA",
+          "81": "TUR over QAT",
+          "82": "BEL over CIV",
+          "83": "COL over CRO",
+          "84": "ESP over AUT",
+          "85": "SUI over IRN",
+          "86": "ARG over URU",
+          "87": "POR over PAR",
+          "88": "USA over EGY"
+        }
+      },
+      "ocrNotes": [
+        "Best-effort manual OCR from the uploaded Shorty bracket.",
+        "Match 77 second team was read as SCO.",
+        "Match 79 second team was read as ALG.",
+        "Match 80 was read as SWE over KSA.",
+        "Match 87 was read as POR over PAR.",
+        "Final score was read as ESP 3-2 ARG."
+      ]
+    }
+  ]
+}
