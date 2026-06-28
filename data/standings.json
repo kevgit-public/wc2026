@@ -1,6 +1,6 @@
 {
   "version": "2026-world-cup-bracket-v1",
-  "lastUpdated": "2026-06-11T00:00:00Z",
+  "lastUpdated": "2026-06-28T04:29:21Z",
   "scoringRules": {
     "roundOf32": 1,
     "roundOf16": 2,
@@ -11,16 +11,17 @@
     "championBonus": 16
   },
   "scoringMode": "slot-based",
-  "stageCompletedThrough": "notStarted",
-  "maxPossiblePointsSoFar": 0,
+  "stageCompletedThrough": "roundOf32",
+  "tournamentStatus": "roundOf32Ready",
+  "maxPossiblePointsSoFar": 32,
   "standings": [
     {
       "rank": 1,
       "playerId": "sample_player_1",
       "displayName": "Sample Player 1",
-      "totalPoints": 0,
+      "totalPoints": 13,
       "pointsBreakdown": {
-        "roundOf32": 0,
+        "roundOf32": 13,
         "roundOf16": 0,
         "quarterfinal": 0,
         "semifinal": 0,
@@ -29,7 +30,7 @@
         "championBonus": 0
       },
       "correctCounts": {
-        "roundOf32Slots": 0,
+        "roundOf32Slots": 13,
         "roundOf16Slots": 0,
         "quarterfinalSlots": 0,
         "semifinalSlots": 0,
@@ -45,12 +46,12 @@
       }
     },
     {
-      "rank": 2,
+      "rank": 1,
       "playerId": "shorty",
       "displayName": "Shorty",
-      "totalPoints": 0,
+      "totalPoints": 13,
       "pointsBreakdown": {
-        "roundOf32": 0,
+        "roundOf32": 13,
         "roundOf16": 0,
         "quarterfinal": 0,
         "semifinal": 0,
@@ -59,7 +60,7 @@
         "championBonus": 0
       },
       "correctCounts": {
-        "roundOf32Slots": 0,
+        "roundOf32Slots": 13,
         "roundOf16Slots": 0,
         "quarterfinalSlots": 0,
         "semifinalSlots": 0,
@@ -74,5 +75,10 @@
         "thirdPlacePick": "JPN"
       }
     }
+  ],
+  "notes": [
+    "All 32 Round of 32 team slots are finalized and scored at 1 point each.",
+    "No Round of 32 matches have been played yet, so later-round slot points remain at zero.",
+    "ALG in the player data was treated as equivalent to FIFA code DZA for Algeria."
   ]
 }
