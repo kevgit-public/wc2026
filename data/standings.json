@@ -1,6 +1,6 @@
 {
   "version": "2026-world-cup-bracket-v1",
-  "lastUpdated": "2026-06-28T04:29:21Z",
+  "lastUpdated": "2026-07-13T19:35:00Z",
   "scoringRules": {
     "roundOf32": 1,
     "roundOf16": 2,
@@ -11,59 +11,29 @@
     "championBonus": 16
   },
   "scoringMode": "slot-based",
-  "stageCompletedThrough": "roundOf32",
-  "tournamentStatus": "roundOf32Ready",
-  "maxPossiblePointsSoFar": 32,
+  "stageCompletedThrough": "semifinal",
+  "tournamentStatus": "semifinalsReady",
+  "maxPossiblePointsSoFar": 104,
   "standings": [
-    {
-      "rank": 1,
-      "playerId": "sample_player_1",
-      "displayName": "Sample Player 1",
-      "totalPoints": 13,
-      "pointsBreakdown": {
-        "roundOf32": 13,
-        "roundOf16": 0,
-        "quarterfinal": 0,
-        "semifinal": 0,
-        "thirdPlace": 0,
-        "final": 0,
-        "championBonus": 0
-      },
-      "correctCounts": {
-        "roundOf32Slots": 13,
-        "roundOf16Slots": 0,
-        "quarterfinalSlots": 0,
-        "semifinalSlots": 0,
-        "thirdPlaceWinner": 0,
-        "finalistSlots": 0,
-        "champion": 0
-      },
-      "remainingPotential": {
-        "championStillAlive": true,
-        "championPick": "FRA",
-        "runnerUpPick": "POR",
-        "thirdPlacePick": "ESP"
-      }
-    },
     {
       "rank": 1,
       "playerId": "shorty",
       "displayName": "Shorty",
-      "totalPoints": 13,
+      "totalPoints": 47,
       "pointsBreakdown": {
-        "roundOf32": 13,
-        "roundOf16": 0,
-        "quarterfinal": 0,
-        "semifinal": 0,
+        "roundOf32": 14,
+        "roundOf16": 16,
+        "quarterfinal": 9,
+        "semifinal": 8,
         "thirdPlace": 0,
         "final": 0,
         "championBonus": 0
       },
       "correctCounts": {
-        "roundOf32Slots": 13,
-        "roundOf16Slots": 0,
-        "quarterfinalSlots": 0,
-        "semifinalSlots": 0,
+        "roundOf32Slots": 14,
+        "roundOf16Slots": 8,
+        "quarterfinalSlots": 3,
+        "semifinalSlots": 2,
         "thirdPlaceWinner": 0,
         "finalistSlots": 0,
         "champion": 0
@@ -74,11 +44,43 @@
         "runnerUpPick": "ARG",
         "thirdPlacePick": "JPN"
       }
+    },
+    {
+      "rank": 2,
+      "playerId": "sample_player_1",
+      "displayName": "Sample Player 1",
+      "totalPoints": 44,
+      "pointsBreakdown": {
+        "roundOf32": 15,
+        "roundOf16": 12,
+        "quarterfinal": 9,
+        "semifinal": 8,
+        "thirdPlace": 0,
+        "final": 0,
+        "championBonus": 0
+      },
+      "correctCounts": {
+        "roundOf32Slots": 15,
+        "roundOf16Slots": 6,
+        "quarterfinalSlots": 3,
+        "semifinalSlots": 2,
+        "thirdPlaceWinner": 0,
+        "finalistSlots": 0,
+        "champion": 0
+      },
+      "remainingPotential": {
+        "championStillAlive": true,
+        "championPick": "FRA",
+        "runnerUpPick": "POR",
+        "thirdPlacePick": "ESP"
+      }
     }
   ],
   "notes": [
-    "All 32 Round of 32 team slots are finalized and scored at 1 point each.",
-    "No Round of 32 matches have been played yet, so later-round slot points remain at zero.",
-    "ALG in the player data was treated as equivalent to FIFA code DZA for Algeria."
+    "Scored through teams entering the semifinals; semifinal matches have not been played yet.",
+    "Semifinal slots are France vs Spain and England vs Argentina.",
+    "The app's stage label will show this as Semifinals.",
+    "ALG in player data was treated as equivalent to FIFA code DZA for Algeria.",
+    "Scoring is slot-based, so points are awarded for teams placed into each round slot, not simply for match winners."
   ]
 }
