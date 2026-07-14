@@ -1,6 +1,6 @@
 {
   "version": "2026-world-cup-bracket-v1",
-  "lastUpdated": "2026-07-13T19:35:00Z",
+  "lastUpdated": "2026-07-14T22:58:41Z",
   "scoringRules": {
     "roundOf32": 1,
     "roundOf16": 2,
@@ -12,21 +12,21 @@
   },
   "scoringMode": "slot-based",
   "stageCompletedThrough": "semifinal",
-  "tournamentStatus": "semifinalsReady",
-  "maxPossiblePointsSoFar": 104,
+  "tournamentStatus": "firstSemifinalComplete",
+  "maxPossiblePointsSoFar": 112,
   "standings": [
     {
       "rank": 1,
       "playerId": "shorty",
       "displayName": "Shorty",
-      "totalPoints": 47,
+      "totalPoints": 55,
       "pointsBreakdown": {
         "roundOf32": 14,
         "roundOf16": 16,
         "quarterfinal": 9,
         "semifinal": 8,
         "thirdPlace": 0,
-        "final": 0,
+        "final": 8,
         "championBonus": 0
       },
       "correctCounts": {
@@ -35,7 +35,7 @@
         "quarterfinalSlots": 3,
         "semifinalSlots": 2,
         "thirdPlaceWinner": 0,
-        "finalistSlots": 0,
+        "finalistSlots": 1,
         "champion": 0
       },
       "remainingPotential": {
@@ -69,7 +69,7 @@
         "champion": 0
       },
       "remainingPotential": {
-        "championStillAlive": true,
+        "championStillAlive": false,
         "championPick": "FRA",
         "runnerUpPick": "POR",
         "thirdPlacePick": "ESP"
@@ -77,10 +77,10 @@
     }
   ],
   "notes": [
-    "Scored through teams entering the semifinals; semifinal matches have not been played yet.",
-    "Semifinal slots are France vs Spain and England vs Argentina.",
-    "The app's stage label will show this as Semifinals.",
-    "ALG in player data was treated as equivalent to FIFA code DZA for Algeria.",
-    "Scoring is slot-based, so points are awarded for teams placed into each round slot, not simply for match winners."
+    "First semifinal is complete: Spain defeated France 2-0.",
+    "Spain advanced to the final; France advanced to the third-place game.",
+    "Shorty received 8 finalist-slot points for correctly having Spain in the final.",
+    "Sample Player 1's champion pick, France, has been eliminated from championship contention.",
+    "The second semifinal, England vs Argentina, is still pending."
   ]
 }
